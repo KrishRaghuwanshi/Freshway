@@ -1,0 +1,202 @@
+[
+    {
+        "id": "navel-orange-001",
+        "name": "California Navel Orange",
+        "slug": "california-navel-orange",
+        "category": "fruit",
+        "subcategory": "citrus",
+        "price": 4.99,
+        "unit": "lb",
+        "origin": "Riverside, CA",
+        "freshness": {
+            "picked": "2026-01-24",
+            "peakQuality": true,
+            "guaranteedDays": 7
+        },
+        "nutrition": {
+            "calories": 62,
+            "fiber": "3g",
+            "vitaminC": "70%"
+        },
+        "images": [
+            "/images/orange.jpg"
+        ],
+        "description": "Sun-ripened navels from California's citrus heartland. Sweet, seedless, and perfect for snacking.",
+        "featured": true
+    },
+    {
+        "id": "organic-avocado-002",
+        "name": "Organic Hass Avocado",
+        "slug": "organic-hass-avocado",
+        "category": "fruit",
+        "subcategory": "tropical",
+        "price": 2.49,
+        "unit": "each",
+        "origin": "Michoacán, Mexico",
+        "freshness": {
+            "picked": "2026-01-22",
+            "peakQuality": true,
+            "guaranteedDays": 5
+        },
+        "nutrition": {
+            "calories": 234,
+            "fiber": "10g",
+            "healthyFats": "21g"
+        },
+        "images": [
+            "/images/avocado.jpg"
+        ],
+        "description": "Creamy, buttery Hass avocados. Certified organic and perfectly ripe.",
+        "featured": true
+    },
+    {
+        "id": "heritage-tomato-003",
+        "name": "Heritage Tomatoes",
+        "slug": "heritage-tomatoes",
+        "category": "vegetable",
+        "subcategory": "nightshade",
+        "price": 6.99,
+        "unit": "lb",
+        "origin": "Salinas Valley, CA",
+        "freshness": {
+            "picked": "2026-01-25",
+            "peakQuality": true,
+            "guaranteedDays": 4
+        },
+        "nutrition": {
+            "calories": 22,
+            "fiber": "1.5g",
+            "vitaminA": "25%"
+        },
+        "images": [
+            "/images/tomatoes.jpg"
+        ],
+        "description": "Heirloom varieties bursting with authentic tomato flavor. Ugly outside, incredible inside.",
+        "featured": true
+    },
+    {
+        "id": "wild-blueberries-004",
+        "name": "Wild Maine Blueberries",
+        "slug": "wild-maine-blueberries",
+        "category": "fruit",
+        "subcategory": "berries",
+        "price": 7.99,
+        "unit": "pint",
+        "origin": "Downeast Maine",
+        "freshness": {
+            "picked": "2026-01-24",
+            "peakQuality": true,
+            "guaranteedDays": 5
+        },
+        "nutrition": {
+            "calories": 84,
+            "fiber": "4g",
+            "antioxidants": "Very High"
+        },
+        "images": [
+            "/images/blueberries.jpg"
+        ],
+        "description": "Tiny, intensely flavored wild blueberries. Twice the antioxidants of cultivated berries.",
+        "featured": true
+    },
+    {
+        "id": "organic-spinach-005",
+        "name": "Organic Baby Spinach",
+        "slug": "organic-baby-spinach",
+        "category": "vegetable",
+        "subcategory": "leafy-greens",
+        "price": 5.49,
+        "unit": "5oz",
+        "origin": "Watsonville, CA",
+        "freshness": {
+            "picked": "2026-01-25",
+            "peakQuality": true,
+            "guaranteedDays": 6
+        },
+        "nutrition": {
+            "calories": 7,
+            "iron": "15%",
+            "vitaminK": "180%"
+        },
+        "images": [
+            "/images/spinach.jpg"
+        ],
+        "description": "Tender baby spinach leaves. Triple-washed and ready to eat.",
+        "featured": true
+    },
+    {
+        "id": "local-honey-006",
+        "name": "Raw Wildflower Honey",
+        "slug": "raw-wildflower-honey",
+        "category": "pantry",
+        "subcategory": "sweeteners",
+        "price": 12.99,
+        "unit": "12oz",
+        "origin": "Hudson Valley, NY",
+        "freshness": {
+            "harvested": "2025-09-15",
+            "peakQuality": true,
+            "guaranteedDays": 365
+        },
+        "nutrition": {
+            "calories": 64,
+            "sugars": "17g",
+            "enzymes": "Active"
+        },
+        "images": [
+            "/images/honey.jpg"
+        ],
+        "description": "Unfiltered, unheated honey from local wildflower meadows. Pure liquid gold.",
+        "featured": true
+    },
+    {
+        "id": "sourdough-bread-007",
+        "name": "Artisan Sourdough Loaf",
+        "slug": "artisan-sourdough-loaf",
+        "category": "bakery",
+        "subcategory": "bread",
+        "price": 7.49,
+        "unit": "loaf",
+        "origin": "In-House Bakery",
+        "freshness": {
+            "baked": "2026-01-26",
+            "peakQuality": true,
+            "guaranteedDays": 3
+        },
+        "nutrition": {
+            "calories": 120,
+            "fiber": "2g",
+            "protein": "4g"
+        },
+        "images": [
+            "/images/loaf.jpg"
+        ],
+        "description": "72-hour fermented sourdough. Crusty exterior, tangy interior. Baked fresh daily.",
+        "featured": true
+    },
+    {
+        "id": "grass-fed-butter-008",
+        "name": "Grass-Fed Cultured Butter",
+        "slug": "grass-fed-cultured-butter",
+        "category": "dairy",
+        "subcategory": "butter",
+        "price": 8.99,
+        "unit": "8oz",
+        "origin": "Vermont Creamery",
+        "freshness": {
+            "churned": "2026-01-20",
+            "peakQuality": true,
+            "guaranteedDays": 30
+        },
+        "nutrition": {
+            "calories": 100,
+            "fat": "11g",
+            "omega3": "High"
+        },
+        "images": [
+            "/images/butter.jpg"
+        ],
+        "description": "Rich, golden butter from pasture-raised cows. European-style cultured flavor.",
+        "featured": true
+    }
+]

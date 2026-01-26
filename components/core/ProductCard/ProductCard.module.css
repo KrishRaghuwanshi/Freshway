@@ -1,0 +1,256 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    transition: all var(--duration-normal) var(--ease-out);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--shadow-xl);
+}
+
+/* Image container */
+.imageWrapper {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-alabaster) 100%);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+/* Placeholder when no image */
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-forest-50) 0%, var(--color-cream) 100%);
+}
+
+.imagePlaceholder svg {
+    width: 48px;
+    height: 48px;
+    color: var(--color-forest-light);
+    opacity: 0.5;
+}
+
+/* Badges container - top left */
+.badges {
+    position: absolute;
+    top: var(--space-3);
+    left: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: 2;
+}
+
+/* Quick add button - appears on hover */
+.quickAdd {
+    position: absolute;
+    bottom: var(--space-3);
+    right: var(--space-3);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all var(--duration-normal) var(--ease-out);
+    z-index: 2;
+}
+
+.card:hover .quickAdd {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile: always show quick add */
+@media (max-width: 768px) {
+    .quickAdd {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content section */
+.content {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    flex: 1;
+}
+
+/* Origin - small text */
+.origin {
+    font-size: var(--text-xs);
+    color: var(--color-graphite-light);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    font-weight: var(--weight-medium);
+}
+
+/* Product name */
+.name {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--color-graphite);
+    line-height: var(--leading-snug);
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.card:hover .name {
+    color: var(--color-forest);
+}
+
+/* Price row */
+.priceRow {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin-top: auto;
+}
+
+/* Price - HIGHEST CONTRAST (per blueprint) */
+.price {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-forest);
+    letter-spacing: var(--tracking-tight);
+}
+
+/* Unit */
+.unit {
+    font-size: var(--text-sm);
+    color: var(--color-graphite-muted);
+}
+
+/* Description - optional */
+.description {
+    font-size: var(--text-sm);
+    color: var(--color-graphite-muted);
+    line-height: var(--leading-relaxed);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Add to cart confirmation overlay */
+.addedOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(27, 67, 50, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    animation: fadeIn var(--duration-fast) var(--ease-out);
+    z-index: 10;
+}
+
+.addedIcon {
+    width: 48px;
+    height: 48px;
+    background: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-success);
+    animation: scaleIn var(--duration-normal) var(--ease-bounce);
+}
+
+.addedIcon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.addedText {
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: var(--weight-medium);
+    font-size: var(--text-base);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Skeleton loading state */
+.skeleton {
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(90deg,
+            var(--color-cream) 25%,
+            var(--color-alabaster) 50%,
+            var(--color-cream) 75%);
+    background-size: 200% 100%;
+}
+
+.skeletonImage {
+    aspect-ratio: 1;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.skeletonText {
+    height: 16px;
+    border-radius: var(--radius-sm);
+}
+
+.skeletonTextShort {
+    width: 60%;
+}
+
+.skeletonPrice {
+    height: 24px;
+    width: 40%;
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-2);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}

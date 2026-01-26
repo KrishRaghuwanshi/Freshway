@@ -1,0 +1,218 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-family: var(--font-heading);
+    font-weight: var(--weight-medium);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--duration-normal) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Ripple effect container */
+.button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+}
+
+.button:active::before {
+    transform: scale(2);
+    opacity: 1;
+    transition: transform 0s, opacity 0s;
+}
+
+/* Sizes */
+.sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-lg);
+    min-height: 36px;
+}
+
+.md {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
+    border-radius: var(--radius-xl);
+    min-height: 44px;
+}
+
+.lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-lg);
+    border-radius: var(--radius-xl);
+    min-height: 52px;
+}
+
+.xl {
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--text-xl);
+    border-radius: var(--radius-2xl);
+    min-height: 60px;
+}
+
+/* Primary variant - Forest green with glow */
+.primary {
+    background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-light) 100%);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md), var(--shadow-forest);
+}
+
+.primary:hover {
+    transform: translateY(var(--hover-lift)) scale(var(--hover-scale));
+    box-shadow: var(--shadow-lg), var(--glow-forest);
+}
+
+.primary:active {
+    transform: translateY(0) scale(var(--press-scale));
+}
+
+/* Secondary variant - outlined */
+.secondary {
+    background: transparent;
+    color: var(--color-forest);
+    border: 2px solid var(--color-forest);
+    box-shadow: var(--shadow-sm);
+}
+
+.secondary:hover {
+    background: var(--color-forest);
+    color: var(--color-white);
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--shadow-md);
+}
+
+.secondary:active {
+    transform: scale(var(--press-scale));
+}
+
+/* Accent variant - Zest orange */
+.accent {
+    background: linear-gradient(135deg, var(--color-zest) 0%, var(--color-zest-hover) 100%);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md), var(--shadow-zest);
+}
+
+.accent:hover {
+    transform: translateY(var(--hover-lift)) scale(var(--hover-scale));
+    box-shadow: var(--shadow-lg), var(--glow-zest);
+}
+
+.accent:active {
+    transform: translateY(0) scale(var(--press-scale));
+}
+
+/* Ghost variant */
+.ghost {
+    background: transparent;
+    color: var(--color-forest);
+    box-shadow: none;
+}
+
+.ghost:hover {
+    background: rgba(27, 67, 50, 0.08);
+    transform: translateY(var(--hover-lift));
+}
+
+.ghost:active {
+    transform: scale(var(--press-scale));
+}
+
+/* Glass variant - Glassmorphism */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    color: var(--color-graphite);
+    box-shadow: var(--shadow-md);
+}
+
+.glass:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(var(--hover-lift));
+    box-shadow: var(--shadow-lg);
+}
+
+/* Icon button */
+.icon {
+    padding: var(--space-3);
+    min-height: auto;
+    min-width: auto;
+    aspect-ratio: 1;
+}
+
+.icon.sm {
+    padding: var(--space-2);
+}
+
+.icon.lg {
+    padding: var(--space-4);
+}
+
+/* Full width */
+.fullWidth {
+    width: 100%;
+}
+
+/* Disabled state */
+.button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Loading state */
+.loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.spinner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--color-white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Icon within button */
+.buttonIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.iconLeft {
+    margin-right: var(--space-1);
+}
+
+.iconRight {
+    margin-left: var(--space-1);
+}
+
+/* Focus state - accessible */
+.button:focus-visible {
+    outline: 3px solid var(--color-zest);
+    outline-offset: 2px;
+}

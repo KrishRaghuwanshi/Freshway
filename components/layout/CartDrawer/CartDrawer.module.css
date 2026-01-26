@@ -1,0 +1,305 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: var(--z-modal-backdrop);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.backdropOpen {
+    opacity: 1;
+    visibility: visible;
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 420px;
+    background: var(--color-white);
+    z-index: var(--z-modal);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform var(--duration-normal) var(--ease-out);
+    box-shadow: var(--shadow-2xl);
+}
+
+.drawerOpen {
+    transform: translateX(0);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-semibold);
+    color: var(--color-graphite);
+}
+
+.closeButton {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+    color: var(--color-graphite-muted);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.closeButton:hover {
+    background: var(--color-cream);
+    color: var(--color-graphite);
+}
+
+.closeButton svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-6);
+}
+
+/* Empty state */
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-16) var(--space-4);
+}
+
+.emptyIcon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-cream);
+    border-radius: var(--radius-2xl);
+    margin-bottom: var(--space-6);
+}
+
+.emptyIcon svg {
+    width: 40px;
+    height: 40px;
+    color: var(--color-graphite-light);
+}
+
+.emptyText {
+    font-size: var(--text-lg);
+    color: var(--color-graphite-muted);
+    margin-bottom: var(--space-6);
+}
+
+/* Items list */
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    list-style: none;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-cream-light);
+    border-radius: var(--radius-xl);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.item:hover {
+    background: var(--color-cream);
+}
+
+.itemImage {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-white);
+}
+
+.itemImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.itemImagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--color-forest-50) 0%, var(--color-cream) 100%);
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.itemName {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    color: var(--color-graphite);
+}
+
+.itemOrigin {
+    font-size: var(--text-xs);
+    color: var(--color-graphite-light);
+}
+
+.itemPrice {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--color-forest);
+    margin-top: auto;
+}
+
+.itemActions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-2);
+}
+
+.quantityControl {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-1);
+}
+
+.quantityButton {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    color: var(--color-graphite-muted);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.quantityButton:hover {
+    background: var(--color-forest);
+    color: var(--color-white);
+}
+
+.quantityButton svg {
+    width: 16px;
+    height: 16px;
+}
+
+.quantity {
+    min-width: 24px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+}
+
+.removeButton {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    color: var(--color-graphite-light);
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.removeButton:hover {
+    background: var(--color-error-light);
+    color: var(--color-white);
+}
+
+.removeButton svg {
+    width: 16px;
+    height: 16px;
+}
+
+.clearButton {
+    width: 100%;
+    padding: var(--space-3);
+    margin-top: var(--space-4);
+    background: transparent;
+    border: 1px dashed var(--color-graphite-light);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    color: var(--color-graphite-muted);
+    cursor: pointer;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.clearButton:hover {
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+/* Footer */
+.footer {
+    padding: var(--space-6);
+    border-top: 1px solid var(--border-color);
+    background: var(--color-white);
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2);
+}
+
+.subtotal span:first-child {
+    font-size: var(--text-base);
+    color: var(--color-graphite-muted);
+}
+
+.subtotalPrice {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-graphite);
+}
+
+.shipping {
+    font-size: var(--text-sm);
+    color: var(--color-graphite-light);
+    margin-bottom: var(--space-4);
+}

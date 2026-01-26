@@ -1,0 +1,318 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.headerInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--container-padding);
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+/* Scrolled state - glassmorphism */
+.scrolled {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.scrolled .headerInner {
+    padding-top: var(--space-3);
+    padding-bottom: var(--space-3);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    z-index: 10;
+}
+
+.logoIcon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-light) 100%);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    box-shadow: var(--shadow-forest);
+    transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.logo:hover .logoIcon {
+    transform: scale(1.05);
+}
+
+.logoIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.logoText {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-forest);
+    letter-spacing: var(--tracking-tight);
+}
+
+.logoTextLight {
+    color: var(--color-white);
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    list-style: none;
+}
+
+.navLink {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    color: var(--color-graphite);
+    text-decoration: none;
+    position: relative;
+    padding: var(--space-2) 0;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-forest);
+    transition: width var(--duration-normal) var(--ease-out);
+}
+
+.navLink:hover {
+    color: var(--color-forest);
+}
+
+.navLink:hover::after {
+    width: 100%;
+}
+
+.navLinkActive {
+    color: var(--color-forest);
+}
+
+.navLinkActive::after {
+    width: 100%;
+}
+
+/* Light variant for hero overlay */
+.light .navLink {
+    color: var(--color-white);
+}
+
+.light .navLink:hover {
+    color: var(--color-cream);
+}
+
+.light .navLink::after {
+    background: var(--color-white);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* Cart button */
+.cartButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-full);
+    transition: all var(--duration-fast) var(--ease-out);
+    color: var(--color-graphite);
+}
+
+.cartButton:hover {
+    background: rgba(27, 67, 50, 0.08);
+}
+
+.light .cartButton {
+    color: var(--color-white);
+}
+
+.light .cartButton:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cartButton svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cartCount {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 var(--space-1);
+    background: var(--color-zest);
+    color: var(--color-white);
+    font-size: 11px;
+    font-weight: var(--weight-bold);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: popIn var(--duration-normal) var(--ease-bounce);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Mobile menu button */
+.menuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-3);
+    border-radius: var(--radius-lg);
+    z-index: 100;
+}
+
+.menuButton span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-graphite);
+    border-radius: 2px;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.light .menuButton span {
+    background: var(--color-white);
+}
+
+.menuButtonOpen span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menuButtonOpen span:nth-child(2) {
+    opacity: 0;
+}
+
+.menuButtonOpen span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile navigation */
+.mobileNav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--color-white);
+    z-index: var(--z-modal);
+    padding: calc(80px + var(--space-8)) var(--container-padding) var(--space-8);
+    flex-direction: column;
+    gap: var(--space-6);
+    animation: slideIn var(--duration-normal) var(--ease-out);
+}
+
+.mobileNav.open {
+    display: flex;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    list-style: none;
+}
+
+.mobileNavLink {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-semibold);
+    color: var(--color-graphite);
+    text-decoration: none;
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.mobileNavLink:hover {
+    color: var(--color-forest);
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+    }
+
+    .menuButton {
+        display: flex;
+    }
+}
+
+/* Hide on scroll down, show on scroll up */
+.hidden {
+    transform: translateY(-100%);
+}

@@ -1,0 +1,124 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-family: var(--font-heading);
+    font-weight: var(--weight-medium);
+    white-space: nowrap;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+/* Sizes */
+.sm {
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-xs);
+    border-radius: var(--radius-md);
+}
+
+.md {
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-lg);
+}
+
+.lg {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-base);
+    border-radius: var(--radius-lg);
+}
+
+/* Peak Quality - Premium gold/green gradient */
+.peakQuality {
+    background: linear-gradient(135deg, var(--color-success) 0%, var(--color-success-light) 100%);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(64, 145, 108, 0.3);
+}
+
+.peakQuality .icon {
+    color: #90EE90;
+}
+
+/* Origin badge */
+.origin {
+    background: var(--color-cream);
+    color: var(--color-graphite);
+    border: 1px solid var(--border-color);
+}
+
+/* Seasonal badge */
+.seasonal {
+    background: linear-gradient(135deg, var(--color-zest-light) 0%, var(--color-zest) 100%);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(247, 127, 0, 0.3);
+}
+
+/* New badge */
+.new {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Sale badge */
+.sale {
+    background: linear-gradient(135deg, var(--color-error) 0%, var(--color-error-light) 100%);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(214, 40, 40, 0.3);
+}
+
+/* Organic badge */
+.organic {
+    background: var(--color-forest-50);
+    color: var(--color-forest);
+    border: 1px solid var(--color-forest-200);
+}
+
+/* Default/neutral */
+.default {
+    background: var(--color-alabaster);
+    color: var(--color-graphite-muted);
+}
+
+/* Icon inside badge */
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animated pulse for peak quality */
+.peakQuality::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: inherit;
+    animation: badgePulse 2s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+/* Pill variant */
+.pill {
+    border-radius: var(--radius-full);
+}

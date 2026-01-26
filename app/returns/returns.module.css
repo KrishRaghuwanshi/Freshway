@@ -1,0 +1,287 @@
+.page {
+    min-height: 100vh;
+    padding-top: var(--header-height);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-forest-dark) 100%);
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-zest);
+    margin-bottom: 1rem;
+}
+
+.heroTitle {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.heroDescription {
+    font-size: 1.125rem;
+    color: rgba(254, 250, 224, 0.85);
+    line-height: 1.7;
+}
+
+/* Guarantee */
+.guarantee {
+    padding: 5rem 2rem;
+    background: var(--color-cream);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.guaranteeCard {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    border: 2px solid var(--color-forest-50);
+    position: relative;
+    overflow: hidden;
+}
+
+.guaranteeCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-forest) 0%, var(--color-success) 50%, var(--color-forest) 100%);
+}
+
+.guaranteeIcon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--color-forest) 0%, var(--color-success) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(27, 67, 50, 0.2);
+}
+
+.guaranteeIcon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+}
+
+.guaranteeTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-forest);
+}
+
+.guaranteeText {
+    font-size: 1.125rem;
+    color: var(--color-graphite-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Section */
+.section {
+    padding: 5rem 2rem;
+    background: var(--color-cream);
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-forest-dark);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Policy Grid */
+.policyGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.policyCard {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.policyIcon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 1.25rem;
+    background: var(--color-forest-50);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.policyIcon svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    color: var(--color-forest);
+}
+
+.policyTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-forest-dark);
+    margin-bottom: 0.75rem;
+}
+
+.policyText {
+    font-size: 0.9375rem;
+    color: var(--color-graphite-muted);
+    line-height: 1.6;
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.step {
+    flex: 1;
+    max-width: 280px;
+    text-align: center;
+}
+
+.stepNumber {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-forest);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.stepTitle {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-forest-dark);
+    margin-bottom: 0.5rem;
+}
+
+.stepText {
+    font-size: 0.9375rem;
+    color: var(--color-graphite-muted);
+    line-height: 1.6;
+}
+
+.stepArrow {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.stepArrow svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--color-forest-200);
+}
+
+/* CTA */
+.cta {
+    background: var(--color-forest-dark);
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.ctaContent {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ctaTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: 1rem;
+}
+
+.ctaDescription {
+    font-size: 1.125rem;
+    color: rgba(254, 250, 224, 0.85);
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .policyGrid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .steps {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stepArrow {
+        transform: rotate(90deg);
+        padding: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .guarantee {
+        padding: 0 1.5rem;
+    }
+
+    .guaranteeCard {
+        padding: 2rem;
+    }
+
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .policyCard {
+        padding: 1.5rem;
+    }
+
+    .cta {
+        padding: 4rem 1.5rem;
+    }
+}
