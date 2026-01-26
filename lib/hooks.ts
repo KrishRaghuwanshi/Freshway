@@ -115,8 +115,8 @@ export function useLockBodyScroll(lock: boolean) {
 // Click outside hook
 export function useClickOutside<T extends HTMLElement>(
     callback: () => void
-): React.RefObject<T | null> {
-    const ref = useRef<T | null>(null);
+): React.RefObject<T> {
+    const ref = useRef<T>(null);
 
     useEffect(() => {
         const handleClick = (event: MouseEvent) => {

@@ -19,7 +19,7 @@ export interface Product {
         peakQuality: boolean;
         guaranteedDays: number;
     };
-    nutrition: Record<string, string | number>;
+    nutrition: Record<string, string | number | undefined>;
     images: string[];
     description: string;
     featured: boolean;
