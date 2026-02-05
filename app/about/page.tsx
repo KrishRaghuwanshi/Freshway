@@ -57,7 +57,7 @@ export default function AboutPage() {
                         </div>
                         <div className={styles.missionImage}>
                             <img
-                                src="/images/freshway.jpg"
+                                src="/optimized/images/freshway.webp"
                                 alt="Freshway Farm Partnership"
                                 className={styles.missionImagePhoto}
                             />

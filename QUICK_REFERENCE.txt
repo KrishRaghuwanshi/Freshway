@@ -1,0 +1,113 @@
+╔════════════════════════════════════════════════════════════╗
+║        FRESHWAY ASSET OPTIMIZATION - QUICK REFERENCE       ║
+╚════════════════════════════════════════════════════════════╝
+
+📊 CURRENT STATE
+├─ Video:   49.3 MB  →  Target: ~5.5 MB  (89% reduction)
+├─ Images:  18.8 MB  →  Target: ~2.5 MB  (87% reduction)
+└─ Model:   56 KB    →  Already optimized ✓
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 THREE COMMANDS TO SUCCESS
+
+1. Install Tools (One-time)
+   npm install -g cwebp-bin
+   winget install FFmpeg
+
+2. Optimize Assets
+   npm run optimize
+
+3. Update Code & Test
+   # Find & replace: /images/ → /optimized/images/
+   # Find & replace: .jpg → .webp
+   npm run dev
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 OUTPUT STRUCTURE
+public/
+├── optimized/              ← Use these in production
+│   ├── images/*.webp      ← 9 optimized product images
+│   └── videos/            ← hero.mp4 + hero.webm
+├── images/*.jpg           ← Keep as backup
+└── assets/vid.mp4         ← Keep as backup
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ CODE EXAMPLES
+
+IMAGE - Before:
+<Image src="/images/avocado.jpg" />
+
+IMAGE - After:
+<Image src="/optimized/images/avocado.webp" />
+
+VIDEO - Before:
+<video src="/assets/vid.mp4" />
+
+VIDEO - After:
+<video autoPlay loop muted playsInline>
+  <source src="/optimized/videos/hero.webm" type="video/webm" />
+  <source src="/optimized/videos/hero.mp4" type="video/mp4" />
+</video>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 VERIFICATION
+
+✓ Check files exist:
+  dir public\optimized\images  (should show 9 .webp files)
+  dir public\optimized\videos  (should show 2 video files)
+
+✓ Test in browser:
+  npm run dev
+  DevTools → Network → Check file sizes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION
+
+├─ OPTIMIZATION_SUMMARY.md        ← Start here
+├─ ASSET_OPTIMIZATION_GUIDE.md    ← Detailed guide
+├─ CODE_UPDATE_CHECKLIST.md       ← Code changes needed
+├─ INSTALLATION_GUIDE.md          ← Tool setup help
+└─ QUICK_REFERENCE.txt            ← This file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 SCRIPTS
+
+npm run optimize           → Full optimization (images + video)
+powershell scripts\optimize-images-only.ps1  → Images only
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 QUICK TIPS
+
+1. Video optimization takes 5-10 minutes (be patient!)
+2. Always keep original files as backup
+3. Use VS Code Find & Replace for bulk updates
+4. Test on mobile devices after optimization
+5. Run Lighthouse before/after to see improvements
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  TROUBLESHOOTING
+
+"cwebp not found"     → npm install -g cwebp-bin
+"ffmpeg not found"    → winget install FFmpeg (then restart terminal)
+"Images don't load"   → Check paths: /optimized/images/*.webp
+"404 errors"          → Verify files exist in public/optimized/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📈 EXPECTED RESULTS
+
+Total Size:  68 MB  →  8 MB  (88% reduction)
+Load Time:   15s    →  3s    (75% faster)
+Lighthouse:  50     →  90    (+40 points)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Ready? Run: npm run optimize 🚀

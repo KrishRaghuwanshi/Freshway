@@ -29,9 +29,10 @@ const HeroSection: React.FC = () => {
                         loop
                         playsInline
                         onLoadedData={() => setVideoLoaded(true)}
-                        poster="/images/hero-poster.jpg"
+                        poster="/optimized/images/freshway.webp"
                     >
-                        <source src="/assets/vid.mp4" type="video/mp4" />
+                        <source src="/optimized/videos/hero.webm" type="video/webm" />
+                        <source src="/optimized/videos/hero.mp4" type="video/mp4" />
                     </video>
                 </div>
             )}
@@ -72,24 +73,16 @@ const HeroSection: React.FC = () => {
             {/* Stats Bar */}
             <div className={styles.statsBar}>
                 <div className={styles.stat}>
-                    <span className={styles.statNumber}>150+</span>
+                    <span className={styles.statNumber}>60+</span>
                     <span className={styles.statLabel}>Local Farms</span>
                 </div>
                 <div className={styles.stat}>
-                    <span className={styles.statNumber}>24hr</span>
+                    <span className={styles.statNumber}>2 Days</span>
                     <span className={styles.statLabel}>Farm to Door</span>
                 </div>
                 <div className={styles.stat}>
                     <span className={styles.statNumber}>100%</span>
                     <span className={styles.statLabel}>Fresh Guarantee</span>
-                </div>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className={styles.scrollIndicator}>
-                <span className={styles.scrollText}>Scroll</span>
-                <div className={styles.scrollMouse}>
-                    <div className={styles.scrollWheel} />
                 </div>
             </div>
         </section>

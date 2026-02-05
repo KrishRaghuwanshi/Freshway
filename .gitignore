@@ -41,3 +41,9 @@ next-env.d.ts
 
 # Misc
 *.pem
+
+# Asset Optimization
+# Keep both original and optimized assets in version control
+# public/images/       - Original JPG files (backup)
+# public/assets/       - Original video & models (backup)
+# public/optimized/    - Optimized WebP images and videos (production)
