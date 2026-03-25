@@ -41,7 +41,7 @@ const WowSection: React.FC = () => {
                     {reducedMotion ? (
                         // Static fallback for reduced motion
                         <img
-                            src="/optimized/images/orange.webp"
+                            src="/optimized/images/orange.jpg"
                             alt="Fresh produce tray"
                             className={styles.fallbackImage}
                         />

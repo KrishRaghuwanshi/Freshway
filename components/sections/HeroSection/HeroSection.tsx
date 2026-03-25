@@ -31,7 +31,6 @@ const HeroSection: React.FC = () => {
                         onLoadedData={() => setVideoLoaded(true)}
                         poster="/optimized/images/freshway.webp"
                     >
-                        <source src="/optimized/videos/hero.webm" type="video/webm" />
                         <source src="/optimized/videos/hero.mp4" type="video/mp4" />
                     </video>
                 </div>
