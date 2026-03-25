@@ -45,13 +45,22 @@ export function useScrollPosition() {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
     const lastScrollY = useRef(0);
+    const ticking = useRef(false);
 
     useEffect(() => {
-        const handleScroll = () => {
+        const updatePosition = () => {
             const currentScrollY = window.scrollY;
             setScrollDirection(currentScrollY > lastScrollY.current ? 'down' : 'up');
             lastScrollY.current = currentScrollY;
             setScrollPosition(currentScrollY);
+            ticking.current = false;
+        };
+
+        const handleScroll = () => {
+            if (!ticking.current) {
+                window.requestAnimationFrame(updatePosition);
+                ticking.current = true;
+            }
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
@@ -152,10 +161,10 @@ export function useWindowSize() {
 // Mouse position hook (for 3D interactions)
 export function useMousePosition() {
     const [position, setPosition] = useState({ x: 0, y: 0, normalizedX: 0, normalizedY: 0 });
+    const ticking = useRef(false);
 
     useEffect(() => {
-        const handleMouseMove = (event: MouseEvent) => {
-            const { clientX, clientY } = event;
+        const updatePosition = (clientX: number, clientY: number) => {
             const normalizedX = (clientX / window.innerWidth) * 2 - 1;
             const normalizedY = -(clientY / window.innerHeight) * 2 + 1;
 
@@ -165,6 +174,14 @@ export function useMousePosition() {
                 normalizedX,
                 normalizedY,
             });
+            ticking.current = false;
+        };
+
+        const handleMouseMove = (event: MouseEvent) => {
+            if (!ticking.current) {
+                window.requestAnimationFrame(() => updatePosition(event.clientX, event.clientY));
+                ticking.current = true;
+            }
         };
 
         window.addEventListener('mousemove', handleMouseMove);

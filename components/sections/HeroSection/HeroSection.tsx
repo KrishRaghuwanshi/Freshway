@@ -8,9 +8,11 @@ import { useReducedMotion } from '@/lib/hooks';
 const HeroSection: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [videoLoaded, setVideoLoaded] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const reducedMotion = useReducedMotion();
 
     useEffect(() => {
+        setIsMounted(true);
         if (videoRef.current) {
             videoRef.current.playbackRate = 0.75; // Slow, calm playback
         }
@@ -19,7 +21,7 @@ const HeroSection: React.FC = () => {
     return (
         <section className={`${styles.hero} ${!videoLoaded ? styles.heroFallback : ''}`}>
             {/* Video Background */}
-            {!reducedMotion && (
+            {isMounted && !reducedMotion && (
                 <div className={styles.videoWrapper}>
                     <video
                         ref={videoRef}
@@ -29,7 +31,6 @@ const HeroSection: React.FC = () => {
                         loop
                         playsInline
                         onLoadedData={() => setVideoLoaded(true)}
-                        poster="/optimized/images/freshway.webp"
                     >
                         <source src="/optimized/videos/hero.mp4" type="video/mp4" />
                     </video>

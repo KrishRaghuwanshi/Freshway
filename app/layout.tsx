@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import LenisProvider from '@/components/providers/LenisProvider';
 import CartDrawer from '@/components/layout/CartDrawer';
+import { Preloader } from '@/components/core/Preloader';
 
 export const metadata: Metadata = {
     title: 'Freshway Market | Farm-Fresh Groceries Delivered',
@@ -38,6 +39,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <Preloader />
                 <LenisProvider>
                     <Header />
                     <main>{children}</main>
